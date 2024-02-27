@@ -1,7 +1,7 @@
-from cnn_classifier import logger
-from cnn_classifier.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
-from cnn_classifier.pipeline.stage_02_prepare_base_model import PrepareBaseModelTrainingPipeline
-from cnn_classifier.pipeline.stage_03_model_training import ModelTrainingPipeline
+from src.cnn_classifier import logger
+from src.cnn_classifier.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
+from src.cnn_classifier.pipeline.stage_02_prepare_base_model import PrepareBaseModelTrainingPipeline
+from src.cnn_classifier.pipeline.stage_03_model_training import ModelTrainingPipeline
 
 STAGE_NAME = "Data Ingestion stage"
 try:
