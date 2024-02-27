@@ -44,3 +44,5 @@ class ConfigurationManager:
         )  
 
         return prepare_base_model_config
+    
+    
