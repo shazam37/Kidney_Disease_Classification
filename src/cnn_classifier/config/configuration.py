@@ -1,3 +1,4 @@
+import os
 from src.cnn_classifier.constants import *
 from src.cnn_classifier.utils.common import read_yaml, create_directories
 from src.cnn_classifier.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig, TrainingConfig
