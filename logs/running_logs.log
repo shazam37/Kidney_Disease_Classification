@@ -175,3 +175,13 @@ x==============x]
 [2024-02-28 16:15:12,868: INFO: main: >>>>>> stage Model Training completed <<<<<<
 
 x==============x]
+[2024-02-29 00:40:37,349: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-02-29 00:40:37,351: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-29 00:40:37,352: INFO: common: created directory at: artifacts]
+[2024-02-29 00:41:10,433: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-02-29 00:41:10,435: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-29 00:41:10,436: INFO: common: created directory at: artifacts]
+[2024-02-29 00:45:29,264: INFO: common: json file saved at: scores.json]
+[2024-02-29 01:15:41,970: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-02-29 01:15:41,978: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-02-29 01:15:41,979: INFO: common: created directory at: artifacts]
