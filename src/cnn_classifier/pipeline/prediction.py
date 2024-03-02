@@ -35,17 +35,17 @@ class PredictionPipeline:
 
         if result[0] == 0:
             prediction = 'Tumor'
-            return [{"predicted_image": prediction, 'actual_image': imagename}]
+            return [{"predicted_image": prediction, 'label': str(result[0])}]
         elif result[0] == 1:
             prediction = 'Normal'
-            return [{"predicted_image": prediction, 'actual_image': imagename}]
+            return [{"predicted_image": prediction, 'label': str(result[0])}]
         elif result[0] == 2:
             prediction = 'Stone'
-            return [{"predicted_image": prediction, 'actual_image': imagename}]
+            return [{"predicted_image": prediction, 'label': str(result[0])}]
         elif result[0] == 3:
             prediction = 'Cyst'
-            return [{"predicted_image": prediction, 'actual_image': imagename}]
-        else:
-            prediction = 'null'
-            return [{'predicted_image': prediction, 'actual_image': imagename}]
+            return [{"predicted_image": prediction, 'label': str(result[0])}]
+        # else:
+        #     prediction = 'null'
+        #     return [{'predicted_image': prediction, 'actual_image': imagename, 'label': str(result[0])}]
         
