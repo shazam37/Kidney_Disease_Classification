@@ -356,6 +356,7 @@ x==============x]
 [2024-03-01 14:10:55,449: INFO: _internal: 127.0.0.1 - - [01/Mar/2024 14:10:55] "[33mGET /kidney-image.jpg HTTP/1.1[0m" 404 -]
 [2024-03-01 14:10:55,607: INFO: _internal: 127.0.0.1 - - [01/Mar/2024 14:10:55] "[33mGET /kidney-image.jpg HTTP/1.1[0m" 404 -]
 >>>>>>> 32d5db313161e85be616cf0ded7e9aa3c5b5036c
+<<<<<<< HEAD
 [2024-03-02 14:20:56,985: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:8080
@@ -579,3 +580,26 @@ ValueError: Invalid value for argument `reduction`. Expected one of {None, 'sum_
 [2024-03-02 15:13:52,657: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 15:13:52] "POST /predict HTTP/1.1" 200 -]
 [2024-03-02 15:15:22,979: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 15:15:22] "GET / HTTP/1.1" 200 -]
 [2024-03-02 15:15:47,263: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 15:15:47] "POST /predict HTTP/1.1" 200 -]
+=======
+[2024-03-02 14:16:36,461: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-03-02 14:16:36,462: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-03-02 14:16:36,463: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-02 14:16:36,464: INFO: common: created directory at: artifacts]
+[2024-03-02 14:16:36,464: INFO: common: created directory at: artifacts/data-ingestion]
+[2024-03-02 14:16:36,464: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1f2YFj0UGUtmvLvo81d9nF6PSyd45WcpN/view?usp=drive_link into file artifacts/data_ingestion/data.zip]
+[2024-03-02 14:16:45,030: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.1.40.12:8080]
+[2024-03-02 14:16:45,030: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-03-02 14:16:56,345: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.1.40.12:8080]
+[2024-03-02 14:16:56,345: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-03-02 14:17:10,022: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 14:17:10] "[33mGET /kidney-image.jpg HTTP/1.1[0m" 404 -]
+[2024-03-02 14:17:10,347: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 14:17:10] "[33mGET /kidney-image.jpg HTTP/1.1[0m" 404 -]
+[2024-03-02 14:17:10,745: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 14:17:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2024-03-02 14:17:17,443: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 14:17:17] "GET / HTTP/1.1" 200 -]
+[2024-03-02 14:17:48,381: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 14:17:48] "POST /predict HTTP/1.1" 200 -]
+>>>>>>> bfd28c5fa6e933823d0708770f2bba4d62037188
