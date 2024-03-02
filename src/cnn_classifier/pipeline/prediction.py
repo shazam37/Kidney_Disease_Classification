@@ -24,13 +24,13 @@ class PredictionPipeline:
             prediction = 'Cyst'
             return [{"predicted_image": prediction, 'actual_image': imagename , 'label': result[0]}]
         elif result[0] == 1:
-            prediction == 'Normal'
+            prediction = 'Normal'
             return [{"predicted_image": prediction, 'actual_image': imagename , 'label': result[0]}]
         elif result[0] == 2:
-            prediction == 'Stone'
+            prediction = 'Stone'
             return [{"predicted_image": prediction, 'actual_image': imagename , 'label': result[0]}]
         elif result[0] == 3:
-            prediction == 'Tumor'
+            prediction = 'Tumor'
             return [{"predicted_image": prediction, 'actual_image': imagename , 'label': result[0]}]
 
         
