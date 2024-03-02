@@ -3,6 +3,7 @@ import os
 from flask_cors import CORS, cross_origin
 from src.cnn_classifier.utils.common import decodeImage
 from src.cnn_classifier.pipeline.prediction import PredictionPipeline
+import numpy as np
 
 
 os.putenv('LANG','es_US.UTF-8')
