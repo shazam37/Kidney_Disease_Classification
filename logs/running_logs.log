@@ -356,3 +356,226 @@ x==============x]
 [2024-03-01 14:10:55,449: INFO: _internal: 127.0.0.1 - - [01/Mar/2024 14:10:55] "[33mGET /kidney-image.jpg HTTP/1.1[0m" 404 -]
 [2024-03-01 14:10:55,607: INFO: _internal: 127.0.0.1 - - [01/Mar/2024 14:10:55] "[33mGET /kidney-image.jpg HTTP/1.1[0m" 404 -]
 >>>>>>> 32d5db313161e85be616cf0ded7e9aa3c5b5036c
+[2024-03-02 14:20:56,985: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.16.0.213:8080]
+[2024-03-02 14:20:56,985: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-03-02 14:21:56,227: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 14:21:56] "GET / HTTP/1.1" 200 -]
+[2024-03-02 14:22:25,010: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 14:22:25] "POST /predict HTTP/1.1" 200 -]
+[2024-03-02 14:25:59,657: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 14:25:59] "GET / HTTP/1.1" 200 -]
+[2024-03-02 14:26:09,372: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 14:26:09] "POST /predict HTTP/1.1" 200 -]
+[2024-03-02 14:51:14,703: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.16.0.213:8080]
+[2024-03-02 14:51:14,703: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-03-02 14:51:22,145: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 14:51:22] "GET / HTTP/1.1" 200 -]
+[2024-03-02 14:51:29,741: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask_cors/decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/subsidiary_work/Kidney_Disease_Classification/app.py", line 36, in predictRoute
+    result = clApp.classifier.predict()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/subsidiary_work/Kidney_Disease_Classification/src/cnn_classifier/pipeline/prediction.py", line 12, in predict
+    model = load_model(os.path.join("model","model.h5"))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/saving/saving_api.py", line 183, in load_model
+    return legacy_h5_format.load_model_from_hdf5(filepath)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/legacy/saving/legacy_h5_format.py", line 155, in load_model_from_hdf5
+    **saving_utils.compile_args_from_training_config(
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/legacy/saving/saving_utils.py", line 143, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/legacy/saving/saving_utils.py", line 202, in _deserialize_nested_config
+    return deserialize_fn(config)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/__init__.py", line 124, in deserialize
+    return serialization_lib.deserialize_keras_object(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/saving/serialization_lib.py", line 576, in deserialize_keras_object
+    return deserialize_keras_object(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/saving/serialization_lib.py", line 711, in deserialize_keras_object
+    instance = cls.from_config(inner_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/losses.py", line 34, in from_config
+    return cls(**config)
+           ^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/losses.py", line 737, in __init__
+    super().__init__(
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/losses.py", line 16, in __init__
+    super().__init__(reduction=reduction, name=name)
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/loss.py", line 29, in __init__
+    self.reduction = standardize_reduction(reduction)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/loss.py", line 77, in standardize_reduction
+    raise ValueError(
+ValueError: Invalid value for argument `reduction`. Expected one of {None, 'none', 'sum', 'sum_over_batch_size'}. Received: reduction=auto
+[2024-03-02 14:51:29,744: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 14:51:29] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-03-02 14:55:45,291: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.16.0.213:8080]
+[2024-03-02 14:55:45,291: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-03-02 14:55:46,468: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 14:55:46] "GET / HTTP/1.1" 200 -]
+[2024-03-02 14:55:57,664: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask_cors/decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/subsidiary_work/Kidney_Disease_Classification/app.py", line 36, in predictRoute
+    result = clApp.classifier.predict()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/subsidiary_work/Kidney_Disease_Classification/src/cnn_classifier/pipeline/prediction.py", line 12, in predict
+    model = load_model(os.path.join("model","model.h5"))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/saving/saving_api.py", line 183, in load_model
+    return legacy_h5_format.load_model_from_hdf5(filepath)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/legacy/saving/legacy_h5_format.py", line 155, in load_model_from_hdf5
+    **saving_utils.compile_args_from_training_config(
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/legacy/saving/saving_utils.py", line 143, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/legacy/saving/saving_utils.py", line 202, in _deserialize_nested_config
+    return deserialize_fn(config)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/__init__.py", line 124, in deserialize
+    return serialization_lib.deserialize_keras_object(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/saving/serialization_lib.py", line 576, in deserialize_keras_object
+    return deserialize_keras_object(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/saving/serialization_lib.py", line 711, in deserialize_keras_object
+    instance = cls.from_config(inner_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/losses.py", line 34, in from_config
+    return cls(**config)
+           ^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/losses.py", line 737, in __init__
+    super().__init__(
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/losses.py", line 16, in __init__
+    super().__init__(reduction=reduction, name=name)
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/loss.py", line 29, in __init__
+    self.reduction = standardize_reduction(reduction)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/loss.py", line 77, in standardize_reduction
+    raise ValueError(
+ValueError: Invalid value for argument `reduction`. Expected one of {None, 'sum_over_batch_size', 'sum', 'none'}. Received: reduction=auto
+[2024-03-02 14:55:57,667: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 14:55:57] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-03-02 14:56:53,660: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 14:56:53] "GET / HTTP/1.1" 200 -]
+[2024-03-02 14:57:01,954: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask/app.py", line 1463, in wsgi_app
+    self.add_template_global(f, name=name)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask/app.py", line 872, in full_dispatch_request
+    def templates_auto_reload(self) -> bool:
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask/app.py", line 870, in full_dispatch_request
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask/app.py", line 855, in dispatch_request
+    if prefix is None:
+           ^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/flask_cors/decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/subsidiary_work/Kidney_Disease_Classification/app.py", line 36, in predictRoute
+    result = clApp.classifier.predict()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/subsidiary_work/Kidney_Disease_Classification/src/cnn_classifier/pipeline/prediction.py", line 12, in predict
+    model = load_model(os.path.join("model","model.h5"))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/saving/saving_api.py", line 183, in load_model
+    return legacy_h5_format.load_model_from_hdf5(filepath)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/legacy/saving/legacy_h5_format.py", line 155, in load_model_from_hdf5
+    **saving_utils.compile_args_from_training_config(
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/legacy/saving/saving_utils.py", line 143, in compile_args_from_training_config
+    loss = _deserialize_nested_config(losses.deserialize, loss_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/legacy/saving/saving_utils.py", line 202, in _deserialize_nested_config
+    return deserialize_fn(config)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/__init__.py", line 124, in deserialize
+    return serialization_lib.deserialize_keras_object(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/saving/serialization_lib.py", line 576, in deserialize_keras_object
+    return deserialize_keras_object(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/saving/serialization_lib.py", line 711, in deserialize_keras_object
+    instance = cls.from_config(inner_config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/losses.py", line 34, in from_config
+    return cls(**config)
+           ^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/losses.py", line 737, in __init__
+    super().__init__(
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/losses.py", line 16, in __init__
+    super().__init__(reduction=reduction, name=name)
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/loss.py", line 29, in __init__
+    self.reduction = standardize_reduction(reduction)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/Shaz/miniconda3/envs/kidney2/lib/python3.12/site-packages/keras/src/losses/loss.py", line 77, in standardize_reduction
+    raise ValueError(
+ValueError: Invalid value for argument `reduction`. Expected one of {None, 'sum_over_batch_size', 'sum', 'none'}. Received: reduction=auto
+[2024-03-02 14:57:01,956: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 14:57:01] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-03-02 14:59:00,943: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.16.0.213:8080]
+[2024-03-02 14:59:00,943: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-03-02 14:59:03,325: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 14:59:03] "GET / HTTP/1.1" 200 -]
+[2024-03-02 14:59:11,312: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 14:59:11] "POST /predict HTTP/1.1" 200 -]
+[2024-03-02 15:04:42,793: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 15:04:42] "GET / HTTP/1.1" 200 -]
+[2024-03-02 15:05:01,106: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 15:05:01] "POST /predict HTTP/1.1" 200 -]
+[2024-03-02 15:13:17,121: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 15:13:17] "GET / HTTP/1.1" 200 -]
+[2024-03-02 15:13:22,518: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 15:13:22] "POST /predict HTTP/1.1" 200 -]
+[2024-03-02 15:13:38,894: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.16.0.213:8080]
+[2024-03-02 15:13:38,894: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-03-02 15:13:42,176: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 15:13:42] "GET / HTTP/1.1" 200 -]
+[2024-03-02 15:13:52,657: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 15:13:52] "POST /predict HTTP/1.1" 200 -]
+[2024-03-02 15:15:22,979: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 15:15:22] "GET / HTTP/1.1" 200 -]
+[2024-03-02 15:15:47,263: INFO: _internal: 127.0.0.1 - - [02/Mar/2024 15:15:47] "POST /predict HTTP/1.1" 200 -]
