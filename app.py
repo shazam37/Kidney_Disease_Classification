@@ -31,10 +31,29 @@ def trainRoute():
 @app.route("/predict",methods=['POST'])
 @cross_origin()
 def predictRoute():
-    image = request.json['image']
+    image = request.json['image']   
     decodeImage(image,clApp.filename)
     result = clApp.classifier.predict()
+    result = convert_numpy_to_python(result)
     return jsonify(result)
+
+
+def convert_numpy_to_python(obj):
+    """
+    Recursively converts int64 numpy arrays to regular Python lists or integers.
+    """
+    if isinstance(obj, np.ndarray):
+        if obj.dtype == 'int64':
+            return obj.tolist()  # Convert int64 numpy array to Python list
+        else:
+            return obj.tolist()  # Convert other numpy arrays to Python lists
+    elif isinstance(obj, (list, tuple)):
+        return [convert_numpy_to_python(item) for item in obj]
+    elif isinstance(obj, dict):
+        return {key: convert_numpy_to_python(value) for key, value in obj.items()}
+    else:
+        return obj  # Return unchanged for other types
+
 
 if __name__ == "__main__":
     clApp = ClientApp()
