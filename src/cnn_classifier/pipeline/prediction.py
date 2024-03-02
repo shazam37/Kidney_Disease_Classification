@@ -45,4 +45,7 @@ class PredictionPipeline:
         elif result[0] == 3:
             prediction = 'Tumor'
             return {"predicted_image": prediction}
+        else:
+            prediction = 'null'
+            return {'predicted_image': prediction}
         
