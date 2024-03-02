@@ -1,0 +1,15 @@
+artifact_uri: file:///scratch/Shaz/subsidiary_work/Kidney_Disease_Classification/mlruns/0/5bc17f7509af4e95af7a454058c98454/artifacts
+end_time: 1709347350186
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5bc17f7509af4e95af7a454058c98454
+run_name: unleashed-vole-903
+run_uuid: 5bc17f7509af4e95af7a454058c98454
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1709347344320
+status: 3
+tags: []
+user_id: shaz.ajmal
