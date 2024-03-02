@@ -14,7 +14,7 @@ CORS(app)
 
 class ClientApp:
     def __init__(self):
-        self.filename = "InputImage.jpg"
+        self.filename = "inputImage.jpg"
         self.classifier = PredictionPipeline(self.filename)
 
 @app.route("/",methods=['GET'])
@@ -32,10 +32,10 @@ def trainRoute():
 @app.route("/predict",methods=['POST'])
 @cross_origin()
 def predictRoute():
-    image = request.json['image']   
+    image = request.json['image']                  
     decodeImage(image,clApp.filename)
     result = clApp.classifier.predict()
-    result = convert_numpy_to_python(result)
+    # result = convert_numpy_to_python(result)
     return jsonify(result)
 
 
