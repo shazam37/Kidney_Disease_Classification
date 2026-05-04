@@ -30,7 +30,7 @@ We finally wrap the entire pipeline into an application using Flask. You can ins
 
 We can feed an image for prediction and it will generate a response: 
 
-![Screenshot from 2024-03-13 23-48-32](https://github.com/shazam37/Kidney_Disease_Classification/assets/119686545/6e8c056d-bb28-42ef-98fc-a7e57889ec9d)
+![Screenshot from 2024-03-13 23-48-32](VGG-16.png)
 
 Such predictions should however be approached with utmost caution. They are not meant to replace the expertise of a medical professional but rather to aid them and clarify their assertions. Besides such crucial decision by an ML model requires the reduction of False Negatives as we don't want a patient having a kidney stone to be classified as normal. Various techniques can be used for that purpose. The future revision of this project will ensure to target the false negatives specifically. 
 
